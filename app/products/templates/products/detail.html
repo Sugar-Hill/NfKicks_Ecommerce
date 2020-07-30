@@ -1,0 +1,6 @@
+{{ object.title }} </br >
+{{ object.description }}
+
+{% if object.image %}
+    <img src='{{object.image.url}}' alt='{{object.title}}' width="500" height="600">
+{% endif %}
