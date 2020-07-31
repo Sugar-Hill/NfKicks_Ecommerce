@@ -36,7 +36,11 @@ urlpatterns = [
     path('products/', include(
         ("products.urls", 'products'),
         namespace='products')
-    )
+    ),
+    path('search/', include(
+        ("search.urls", 'search'),
+        namespace='search')
+    ),
 ]
 
 if settings.DEBUG:
