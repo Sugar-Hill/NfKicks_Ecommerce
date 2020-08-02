@@ -17,7 +17,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-
 from .views import (
     home_page,
     about_page,
@@ -33,6 +32,10 @@ urlpatterns = [
     path('login/', login_page, name='login'),
     path('register/', register_page, name='register'),
     path('admin/', admin.site.urls),
+    path('cart/', include(
+        ("carts.urls", 'carts'),
+        namespace='cart')
+    ),
     path('products/', include(
         ("products.urls", 'products'),
         namespace='products')

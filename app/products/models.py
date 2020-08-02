@@ -63,6 +63,7 @@ class ProductManager(models.Manager):
     def search(self, query):
         return self.get_queryset().active().search(query)
 
+
 # Create your models here.
 class Product(models.Model):
     title = models.CharField(max_length=120)
@@ -82,6 +83,10 @@ class Product(models.Model):
         return reverse("products:detail", kwargs={"slug": self.slug})
 
     def __str__(self):
+        return self.title
+
+    @property
+    def name(self):
         return self.title
 
 
