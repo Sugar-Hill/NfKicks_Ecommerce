@@ -4,6 +4,8 @@ from django.db.models.signals import pre_save, post_save, m2m_changed
 
 from products.models import Product
 
+from addresses.views import checkout_address_create_view
+
 User = settings.AUTH_USER_MODEL
 
 
